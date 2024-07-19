@@ -374,6 +374,7 @@
 	.active {
 		display: flex;
 		flex-direction: column;
+		gap:2.4rem;
 	}
 	.reserve-div {
 		flex-direction: column;

@@ -79,7 +79,6 @@ document.addEventListener('keydown', function (e) {
             section.addEventListener('click', function() {
                 const activeMenu = document.querySelector('.menu-box.active');
                 activeMenu.classList.remove('active');
-
                 const targetMenuId = section.id.replace('-section', '-menu');
                 const targetMenu = document.getElementById(targetMenuId);
                 targetMenu.classList.add('active');
