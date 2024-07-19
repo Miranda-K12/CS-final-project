@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+      <link rel="stylesheet" href="css/reset.css" >
+      <link rel="stylesheet" href="css/style.css" >
+      <link rel="stylesheet" href="css/responsive.css" >
+      <link rel="stylesheet" href="css/fonts.css" >
+      <link rel="icon" href="images/pizza.svg">
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <title>Pizza Project</title>
+   </head>
+   <body>
+      <header class="header">
+         <div class="logo">
+            <a href="#home" class="comp-name">LA<br>DOLCE</a>
+            <ion-icon name="pizza-outline" class="logo-icon"></ion-icon>
+         </div>
+         <nav class="nav-bar">
+            <ul class="nav-bar-list">
+               <li class="nav-item nav-item--active"><a class="nav-a" href="#home">Home</a></li>
+               <li class="nav-item"><a class="nav-a" href="#history">About us</a></li>
+               <li class="nav-item"><a class="nav-a" href="#menu">Menu</a></li>
+               <li class="nav-item"><a class="nav-a" href="#testimonials">Testimonial</a></li>
+               <li class="book nav-item"><a class="nav-book" href="#book">Reservation</a></li>
+            </ul>
+         </nav>
+         <div class="btn-mobile-nav">
+            <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+         </div>
+      </header>
+      <div class="container">
+         <section class="section hero-section" id="home">
+            <div class="hero-text">
+               <h1 class="hero-header">La Dolce Pizza</h1>
+               <p class="hero-subheader">Your Pizza Journey Starts Here</p>
+                <a href="#menu" class="btn check-menu">view our menu</a>
+            </div>
+         </section>
+         <section class="section about" id="history">
+            <div class="about-container">
+               <div class="about-text-box">
+                  <h2 class="div-header">OUR HISTORY</h2>
+                  <p class="text-description">Delivering the passion and spirit of Italy with high-quality service since 2010.
+                     Our menu features a variety of dishes including quality pizza and pasta, fresh vegetables and homemade desserts.
+                  </p>
+                  <p class="text-description subheader">Don’t just read about it — visit us today!</p>
+                  <a href="#book" class="btn booking">Book Now</a>
+               </div>
+              <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/gallery/img-1.jpg" class="gallery-img" alt="Nature" >
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-2.jpg" class="gallery-img" alt="Nature" >
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-3.jpg" class="gallery-img" alt="Nature" >
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-4.jpg" class="gallery-img" alt="Nature" >
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-5.jpg" class="gallery-img" alt="Nature" >
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-6.jpg" class="gallery-img" alt="Nature" >
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-7.jpg" class="gallery-img" alt="Nature" >
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-8.jpg" class="gallery-img" alt="Nature">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery/img-9.jpg" class="gallery-img" alt="Nature">
+          </div>
+        </div>
+        </div>
+        <h2 class="div-header offer">What we Offer</h2>
+            <div class="features">
+               <div class="feature-card">
+                  <div class="feature-header">
+                     <ion-icon class="feature-icon" name="car-outline"></ion-icon>
+                     <p class="feature-title">Free Delivery</p>
+                  </div>
+                  <p class="feature-text">
+                     What would you like to try today?
+                     Spend $50 or more and enjoy free delivery.
+                  </p>
+               </div>
+               <div class="feature-card">
+                  <div class="feature-header">
+                     <ion-icon class="feature-icon" name="restaurant-outline"></ion-icon>
+                     <p class="feature-title">Varied Menu</p>
+                  </div>
+                  <p class="feature-text">
+                     Come hungry, leave happy!
+                     We offer variety of dishes including pizza, pasta and vegan food.
+                  </p>
+               </div>
+               <div class="feature-card">
+                  <div class="feature-header">
+                     <ion-icon class="feature-icon" name="location-outline"></ion-icon>
+                     <p class="feature-title"> Great Location</p>
+                  </div>
+                  <p class="feature-text">
+                     "La Dolce Pizza" is located in the city center and is very easy to reach anytime.
+                  </p>
+               </div>
+               <div class="feature-card">
+                  <div class="feature-header">
+                     <ion-icon class="feature-icon" name="leaf-outline"></ion-icon>
+                     <p class="feature-title">Fresh Ingredients</p>
+                  </div>
+                  <p class="feature-text">
+                     Our cooks only use local, fresh, and organic products to prepare your meals.
+                  </p>
+               </div>
+            </div>
+         </section>
+     <section class="section menu" id="menu">
+            <h2 class="div-header">Our Menu</h2>
+            <div class="menu-container">
+               <div class="menu-list">
+                  <div class="menu-section"  id="pizza-section">
+                     <ion-icon name="pizza-outline" class="icon"></ion-icon>
+                     <p class="menu-subheader">Pizzas</p>
+                  </div>
+                  <div class="menu-section" id="pasta-section">
+                     <ion-icon name="restaurant-outline" class="icon"></ion-icon>
+                     <p class="menu-subheader">Pasta</p>
+                  </div>
+                  <div class="menu-section" id="vegan-section">
+                     <ion-icon name="leaf-outline" class="icon"></ion-icon>
+                     <p class="menu-subheader">Vegan</p>
+                  </div>
+                  <div class="menu-section" id="dessert-section">
+                     <ion-icon name="ice-cream-outline" class="icon"></ion-icon>
+                     <p class="menu-subheader">Desserts</p>
+                  </div>
+                  <div class="menu-section" id="drinks-section">
+                     <ion-icon name="wine-outline" class="icon"></ion-icon>
+                     <p class="menu-subheader">Drinks</p>
+                  </div>
+               </div>
+               <div class="menu-box active" id="pizza-menu">
+                  <div class="menu-item">
+                     <img src="images/pizzas/pepperoni.jpg" class="menu-img" alt="pepperoni">
+                     <h5 class="name">Peperoni</h5>
+                     <p class="price">22.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item">
+                     <img src="images/pizzas/Margherita.jpg" class="menu-img" alt="Margherita">
+                     <h5 class="name">Margherita</h5>
+                     <p class="price">18.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item new">
+                     <img src="images/pizzas/sea-food.jpg" class="menu-img" alt="sea-food">
+                     <h5 class="name">Sea-Food</h5>
+                     <p class="price">26.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item label">
+                     <img src="images/pizzas/supreme.jpg" class="menu-img" alt="supreme">
+                     <h5 class="name">Supreme</h5>
+                     <div class="prices">
+                        <span class="old-price">25.00</span>
+                        <p class="price">16.00</p>
+                     </div>
+                     <p class="order">Add To Cart</p>
+                  </div>
+               </div>
+               <div class="menu-box" id="pasta-menu">
+                  <div class="menu-item">
+                     <img src="images/pasta/Pancetta Fusilli.jpg" class="menu-img" alt="Pancetta Fusilli">
+                     <h5 class="name">Pancetta Fusilli</h5>
+                     <p class="price">12.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item">
+                     <img src="images/pasta/Aubergine Rigatoni.jpg" class="menu-img" alt="Aubergine Rigatoni">
+                     <h5 class="name">Aubergine Rigatoni</h5>
+                     <p class="price">16.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item new">
+                     <img src="images/pasta/Mussels Linguine.jpg" class="menu-img" alt="Mussels Linguine">
+                     <h5 class="name">Mussels Linguine</h5>
+                     <p class="price">17.5.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item label">
+                     <img src="images/pasta/Lobster Linguine.jpg" class="menu-img" alt="Lobster Linguine">
+                     <h5 class="name">Lobster Linguine</h5>
+                     <div class="prices">
+                        <span class="old-price">19.00</span>
+                        <p class="price">15.00</p>
+                     </div>
+                     <p class="order">Add To Cart</p>
+                  </div>
+               </div>
+               <div class="menu-box" id="vegan-menu">
+                  <div class="menu-item">
+                     <img src="images/vegan/fresh-salad.jpg" class="menu-img" alt="Pancetta Fusilli">
+                     <h5 class="name">Vegitable Salads</h5>
+                     <p class="price">13.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item">
+                     <img src="images/vegan/fruits.jpg" class="menu-img" alt="Aubergine Rigatoni">
+                     <h5 class="name">Fruit Salads</h5>
+                     <p class="price">12.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item new">
+                     <img src="images/vegan/burger.jpg" class="menu-img" alt="Mussels Linguine">
+                     <h5 class="name">Vegan Burger</h5>
+                     <p class="price">17.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item label">
+                     <img src="images/vegan/vegan-pasta.jpg" class="menu-img" alt="Vegan Pasta">
+                     <h5 class="name">Vegan Pasta</h5>
+                     <div class="prices">
+                        <span class="old-price">15.00</span>
+                        <p class="price">12.00</p>
+                     </div>
+                     <p class="order">Add To Cart</p>
+                  </div>
+               </div>
+               <div class="menu-box" id="dessert-menu">
+                  <div class="menu-item">
+                     <img src="images/desserts/strawberry cake.jpg" class="menu-img" alt="strawberry cake">
+                     <h5 class="name">Strawberry Cake</h5>
+                     <p class="price">8.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item">
+                     <img src="images/desserts/ice-cream.jpg" class="menu-img" alt="ice-cream">
+                     <h5 class="name">Ice-Cream</h5>
+                     <p class="price">7.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item new">
+                     <img src="images/desserts/Mousse-Cake.jpg" class="menu-img" alt="Mousse-Cake">
+                     <h5 class="name">Mousse-Cake</h5>
+                     <p class="price">13.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item label">
+                     <img src="images/desserts/cupcake.jpg" class="menu-img" alt="cupcake">
+                     <h5 class="name">Cupcake</h5>
+                     <div class="prices">
+                        <span class="old-price">6.00</span>
+                        <p class="price">4.00</p>
+                     </div>
+                     <p class="order">Add To Cart</p>
+                  </div>
+               </div>
+               <div class="menu-box" id="drinks-menu">
+                  <div class="menu-item">
+                     <img src="images/drinks/beer.jpg" class="menu-img" alt="Beer">
+                     <h5 class="name">Beer</h5>
+                     <p class="price">8.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item">
+                     <img src="images/drinks/coffee.jpg" class="menu-img" alt="coffee">
+                     <h5 class="name">Coffee</h5>
+                     <p class="price">5.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item new">
+                     <img src="images/drinks/wine.jpg" class="menu-img" alt="Khvanchkara">
+                     <h5 class="name">Khvanchkara</h5>
+                     <p class="price">19.00</p>
+                     <p class="order">Add To Cart</p>
+                  </div>
+                  <div class="menu-item label">
+                     <img src="images/drinks/lemonade.jpg" class="menu-img" alt="lemonade">
+                     <h5 class="name">Lemonade</h5>
+                     <div class="prices">
+                        <span class="old-price">9.00</span>
+                        <p class="price">7.00</p>
+                     </div>
+                     <p class="order">Add To Cart</p>
+                  </div>
+               </div>
+            </div>
+           <div class="menu-images">
+           <figure class="gallery__item gallery__item--1"><img src="images/menu/img-1.jpg" alt="Gallery image 1" class="gallery__img"></figure>
+            <figure class="gallery__item gallery__item--2"><img src="images/menu/img-2.jpg" alt="Gallery image 2" class="gallery__img"></figure>
+            <figure class="gallery__item gallery__item--3"><img src="images/menu/img-3.jpg" alt="Gallery image 3" class="gallery__img"></figure>
+            <figure class="gallery__item gallery__item--4"><img src="images/menu/img-4.jpg" alt="Gallery image 4" class="gallery__img"></figure>
+            <figure class="gallery__item gallery__item--5"><img src="images/menu/img-5.jpg" alt="Gallery image 5" class="gallery__img"></figure>
+            <figure class="gallery__item gallery__item--6"><img src="images/menu/img-6.jpg" alt="Gallery image 6" class="gallery__img"></figure>
+            <figure class="gallery__item gallery__item--7"><img src="images/menu/img-7.jpg" alt="Gallery image 7" class="gallery__img"></figure>
+             <figure class="gallery__item gallery__item--8"><img src="images/menu/img-8.jpg" alt="Gallery image 8" class="gallery__img"></figure>
+       </div>
+         </section>
+         <section class="section testimonial-section" id="testimonials">
+            <h2 class="div-header">what people say</h2>
+            <div class="cards">
+            <div class="card card-1">
+               <p class="testimonail-text">
+                  I recently tried La Dolce Pizza with my friends and it was the
+                  best Pizza I have ever tasted. My favourite is Peperoni pizza,
+                  The crust is thin and crispy. I will definitely be back!
+               </p>
+               <div class="story">
+                  <div class="story-shape">
+                     <img
+                        src="images/faces/Antonio Moreno.jpg" alt="Antonio Moreno" class="story-img">
+                     <p class="customer-name">Antonio Moreno</p>
+                  </div>
+               </div>
+            </div>
+            <div class=" card card-2">
+               <p class="testimonail-text">
+                  Love this spot! One of the best vegan food I have tried in my life. The food is
+                  made with high quality standards. I would  go there again and I totally
+                  recommend it.
+               </p>
+               <div class="story">
+                  <div class="story-shape">
+                     <img
+                        src="images/faces/Maria Conti.jpg" alt="Maria Conti" class="story-img">
+                     <p class="customer-name">Maria Conti</p>
+                  </div>
+               </div>
+            </div>
+            <div class=" card card-3">
+               <p class="testimonail-text">
+               Amazing menu with consistently great food and service.The
+                  restaurant is always well kept and very clean. The staff were so polite and helpful. Thank you!
+               </p>
+               <div class="story">
+                  <div class="story-shape">
+                     <img
+                        src="images/faces/Elena Smith.jpg" alt="Elena Smith" class="story-img">
+                     <p class="customer-name">Elena Smith</p>
+                  </div>
+               </div>
+            </div>
+            <div class=" card card-4">
+               <p class="testimonail-text">
+                  I visited this place last evening with my friends and everything
+                  was perfect. The food is great. The service is great. One
+                  of the the best dining experience in my life.
+               </p>
+               <div class="story">
+                  <div class="story-shape">
+                     <img
+                        src="images/faces/Matis Liepa.jpg"
+                        alt="Matis Liepa"
+                        class="story-img">
+                     <p class="customer-name">Matis Liepa</p>
+                  </div>
+               </div>
+            </div>
+            </div>
+             <div class="slider__btn slider__btn--left">
+               <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="slider__btn slider__btn--right">
+               <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+         </section>
+         <section class="section reservation-section" id="book">
+            <h2 class="div-header">BOOK YOUR TABLE</h2>
+            <form action="/action_page.php" class="reservation-form">
+               <div class="input-forms">
+                  <input type="text" id="fname" name="fname" placeholder="Your Name">
+                  <input type="email"   id="email" placeholder="Your E-mail">
+                  <input placeholder="Select Date" type="text" onfocus="(this.type = 'date')"  id="date">
+                  <input placeholder="Select Time" type="text" onfocus="(this.type = 'time')"  id="time">
+               </div>
+               <textarea class="text-area" name="message" rows="10" placeholder="Leave your message"></textarea>
+               <div class="reserve-div">
+                  <button class="submit" type="submit">Send Message</button>
+                  <div class="form-text">"Please reserve your table at least 1 day in advance"</div>
+               </div>
+            </form>
+         </section>
+         <footer>
+            <div class="footer-info">
+               <div class="footer-column first footer-logo">
+                  <div class="logo">
+                     <a href="#home" class="comp-name">LA<br>DOLCE</a>
+                     <ion-icon name="pizza-outline" class="logo-icon"></ion-icon>
+                  </div>
+                  <p class="author">2024, Design by Miranda Kachlavashvili</p>
+               </div>
+               <div class="footer-column">
+                  <p class="footer-subheader">Company</p>
+                  <ul class="footer-list">
+                     <li class="menu-link"><a href="#history">About Us</a></li>
+                     <li class="menu-link"><a href="#menu"> Menu</a></li>
+                     <li class="menu-link"><a href="#testimonials">testimonials</a></li>
+                  </ul>
+               </div>
+               <div class="footer-column">
+                  <p class="footer-subheader">Working hours</p>
+                  <ul class="footer-list">
+                     <li class="menu-link">Mon – Fri: 09:00 – 00:00</li>
+                     <li class="menu-link">Sat: 10:00 – 01:00</li>
+                     <li class="menu-link">Sun: 10:00 – 00:30</li>
+                  </ul>
+               </div>
+               <div class="footer-column">
+                  <p class="footer-subheader">Address</p>
+                  <ul class="footer-list">
+                     <li class="menu-link">
+                        <a href="https://maps.app.goo.gl/c1qw7ZbAyVLd2YE8A" target="_blank"> Rustaveli avenue 12,  0108</a>
+                     </li>
+                     <li class="menu-link">Tbilisi, Georgia</li>
+                     <li class="menu-link"><a href="mailto:example.@gmail.com" target="_blank">ladolcepizza@ge</a></li>
+                  </ul>
+               </div>
+               <div class="footer-column">
+                  <p class="footer-subheader">Contact us</p>
+                  <ul class="footer-list">
+                     <li class="menu-link"><a href="tel:+592589236127" target="_blank" >Tel:392&nbsp;236&nbsp;236</a></li>
+                     <li  class="menu-link"><a href="tel:+322213256213" target="_blank">Tel:+322&nbsp;213&nbsp;213</a></li>
+                  </ul>
+                  <div class="social-icons">
+                     <a href="https://www.facebook.com/" target="_blank">
+                     <img src="images/facebook.svg" alt="facebook logo" class="footer-icon" ></a>
+                     <a href="https://www.instagram.com/" target="_blank">
+                     <img src="images/instagram.svg" alt="instagram logo" class="footer-icon"></a>
+                     <a href="https://www.tiktok.com/login" target="_blank">
+                     <img src="images/tiktok.svg" alt="tiktok logo" class="footer-icon"></a>
+                  </div>
+               </div>
+            </div>
+         </footer>
+      </div>
+      <script src="js/script.js"></script>
+   </body>
+</html>
