@@ -40,7 +40,7 @@
 	.btn:visited {
 		padding: 2rem 4.8rem;
 	}
-	.menu-box {
+	.active {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 2.4rem;
 	}
@@ -276,7 +276,7 @@
 		display: none;
 	}
 }
-/* media 520*/
+/* media 520 */
 @media (max-width:32.5rem) {
 	.nav-bar {
 		width: 100vw;
@@ -371,7 +371,7 @@
 		height: 2rem;
 		padding: 1.2rem;
 	}
-	.menu-box {
+	.active {
 		display: flex;
 		flex-direction: column;
 	}
@@ -386,19 +386,17 @@
 	.form-text {
 		width: 100%;
 	}
-
 	.footer-subheader {
 		margin: 1.6rem 0;
 	}
-	.pasta-menu,
-	.vegan-menu,
-	.drinks-menu,
-	.dessert-menu {
-		display: none;
-	}
+	 .menu-box {
+        display: none;
+    }
+    .menu-box.active {
+        display: block;
+    }
 }
-
-/* media 375*/
+/* media 375 */
 @media (max-width:23.43rem) {
 	.hero-header {
 		font-size: 5.2rem;
