@@ -564,6 +564,7 @@ input::placeholder,
 .text-area::placeholder,
 #guest {
   color: var(--color-dark-charcoal);
+  background-color: var(--color-white);
 }
 option{
   font-size: 1.6rem;
