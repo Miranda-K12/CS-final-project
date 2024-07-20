@@ -23,7 +23,7 @@
   }
   .div-header {
     font-size: 4.2rem;
-    margin-bottom: 3.6rem;
+    margin-bottom: 3.2rem;
   }
   .about-text-box {
     padding-top: 0;
@@ -202,7 +202,13 @@
   .gallery {
     gap: 1.2rem;
   }
-
+.reservation-form {
+  width: 100%;
+}
+.input-forms {
+  display: flex;
+  margin-bottom: -1.4rem;
+}
   .footer-info {
     gap: 1.6rem;
     padding: 0;
@@ -238,11 +244,16 @@
     flex-direction: column;
     gap: 1.6rem;
   }
-  input {
+  input, #guest{
     width: 100%;
   }
-  .form-text {
-    font-size: 1.6rem;
+    .form-text {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  .special-offer{
+    text-align: center;
+    font-size: 1.4rem;
   }
   .submit {
     font-size: 1.8rem;
@@ -358,9 +369,9 @@
   .submit {
     width: 100%;
   }
-  .form-text {
-    width: 100%;
-  }
+  .reservation-form {
+  margin-top:2.4rem;
+}
   .footer-subheader {
     margin: 1.6rem 0;
   }
@@ -404,5 +415,8 @@
   }
   .testimonail-text {
     width: 100%;
+  }
+   .form-text,.special-offer {
+   font-size:1.2rem;
   }
 }

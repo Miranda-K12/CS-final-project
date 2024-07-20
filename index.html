@@ -375,16 +375,31 @@
       <section class="section reservation-section" id="book">
         <h2 class="div-header">BOOK YOUR TABLE</h2>
         <form action="/action_page.php" class="reservation-form">
+           <p class="special-offer">"Reserve your place now and get a special discount"</p>
           <div class="input-forms">
             <input type="text" id="fname" name="fname" placeholder="Your Name">
             <input type="email"   id="email" placeholder="Your E-mail">
+             <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+             </div>
+             <div class="input-forms">
+             <select id="guest"  name="guests"  required>
+                 <option>Number of Guests</option>
+                  <option >1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>5-10</option>
+                  <option>10-15</option>
+                  <option>15+</option>
+               </select>
             <input placeholder="Select Date" type="text" onfocus="(this.type = 'date')"  id="date">
             <input placeholder="Select Time" type="text" onfocus="(this.type = 'time')"  id="time">
-          </div>
-          <textarea class="text-area" name="message" rows="10" placeholder="Leave your message"></textarea>
+        </div>
+          <textarea class="text-area" name="message" rows="10" placeholder="Special Notes"></textarea>
           <div class="reserve-div">
-            <button class="submit" type="submit">Send Message</button>
-            <div class="form-text">"Please reserve your table at least 1 day in advance"</div>
+            <button class="submit" type="submit">Reserve</button>
+            <p class="form-text">"Please reserve your table at least 1 day in advance"</p>
           </div>
         </form>
       </section>

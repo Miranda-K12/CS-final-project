@@ -535,7 +535,7 @@ html {
   padding: 0 4.8rem;
 }
 .reservation-form {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -546,15 +546,16 @@ html {
   display: flex;
   justify-content: space-between;
 }
-input {
+input, #guest {
   font-size: 1.6rem;
   font-weight: 600;
-  width: 20%;
+  width: 30%;
   border-radius: 0.5rem;
   padding: 1.2rem 1rem;
   border: 2px solid var(--color-dark-orange);
 }
 input:focus,
+#guest:focus,
 .text-area:focus {
   outline: none;
   box-shadow: 0 0 0 0.2rem var(--color-dark-orange);
@@ -563,9 +564,13 @@ input::placeholder,
 .text-area::placeholder {
   color: var(--color-dark-charcoal);
 }
+option{
+  font-size: 1.6rem;
+  font-weight: 600;
+}
 .text-area {
   border: 2px solid var(--color-dark-orange);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   padding: 1.2rem 1rem;
 }
@@ -575,12 +580,19 @@ input::placeholder,
   align-items: center;
 }
 .form-text {
-  font-size: 2rem;
+  font-size: 1.6rem;
   width: 40%;
   line-height: 1.5;
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   font-style: italic;
+}
+.special-offer{
+font-size: 1.6rem;
+line-height: 1.5;
+text-align: left;
+font-weight: 700;
+font-style: italic;
 }
 .submit {
   background-color: var(--color-dark-orange);
