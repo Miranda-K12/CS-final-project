@@ -561,7 +561,8 @@ input:focus,
   box-shadow: 0 0 0 0.2rem var(--color-dark-orange);
 }
 input::placeholder,
-.text-area::placeholder {
+.text-area::placeholder,
+#guest {
   color: var(--color-dark-charcoal);
 }
 option{
