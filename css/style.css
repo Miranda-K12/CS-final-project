@@ -192,7 +192,12 @@ html {
   color: var(--color-dark-charcoal);
   letter-spacing: 4px;
   text-transform: uppercase;
+  opacity: 0;
 }
+.animated {
+    animation: movetoTop  1s forwards;
+}
+
 .text-description {
   font-size: 2rem;
   line-height: 1.6;
@@ -300,8 +305,7 @@ html {
   color: var(--color-orange);
   border: 2px solid var(--color-orange);
 }
-
-	.active-icon {
+.active-icon {
   background-color: #e67e22;
   color: #fdf2e9;
 }
@@ -336,10 +340,11 @@ html {
   height: 100%;
   object-fit: cover;
   display: inline-block;
-  border-radius: 0.5rem;
+  border-radius: 0.5rem; 
+  opacity: 0;
 }
-.gallery__img:hover {
-  animation: imageMove 2s ease;
+.img-animation{
+   animation: zooming 1s forwards;
 }
 /*menu-item*/
 .menu-box {
@@ -662,21 +667,17 @@ footer {
   cursor: pointer;
   transform: scale(1.2);
 }
-/*KeyFrames*/
-@keyframes imageMove {
+/*Animations*/
+@keyframes zooming {
   0% {
-    transform: translateY(0)
+    opacity: 0;
+    transform: scale(0.5);
   }
-
-  50% {
-    transform: translateY(-5%)
-  }
-
   100% {
-    transform: translateY(0)
+    opacity: 1;
+    transform: scale(1);
   }
 }
-
 @keyframes movetoTop {
   0% {
     opacity: 0;
@@ -708,3 +709,25 @@ footer {
     transform: translate(0);
   }
 }
+@keyframes drop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(-17px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-22px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+  }

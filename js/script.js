@@ -96,3 +96,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+//Animaions
+//For section header
+document.addEventListener('scroll', function() {
+    const animatedElements = document.querySelectorAll('.div-header');
+    const viewportHeight = window.innerHeight;
+
+    animatedElements.forEach(animatedEl => {
+        const elPosition = animatedEl.getBoundingClientRect().top;
+
+        if (elPosition < viewportHeight) {
+            animatedEl.classList.add('animated');
+        } else {
+            animatedEl.classList.remove('animated');
+        }
+    });
+});
+//Menu Gallery Animation
+document.addEventListener('scroll', function () {
+  const animatedImages = document.querySelectorAll('.gallery__img');
+  const viewportHeight = window.innerHeight;
+  animatedImages.forEach(animatedImg => {
+    const imgPosition = animatedImg.getBoundingClientRect().top;
+    if (imgPosition < viewportHeight) {
+      animatedImg.classList.add('img-animation');
+    } else {
+      animatedImg.classList.remove('img-animation');
+    }
+  });
+});
+
+
