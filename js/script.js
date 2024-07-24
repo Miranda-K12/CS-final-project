@@ -14,6 +14,30 @@ closeBtns.forEach(function(link) {
     }
   });
 });
+//Change hero content
+document.addEventListener('DOMContentLoaded', function() {
+  const heroImage = document.querySelector('.hero-section');
+  const heroHeader = document.querySelector('.hero-header');
+  const heroSubheader = document.querySelector('.hero-subheader');
+  let isImage1 = true;
+
+  function changeContent() {
+    if (isImage1) {
+      heroImage.style.backgroundImage = "url('images/hero.jpg')";
+      heroHeader.textContent = "La Dolce Pizza";
+      heroSubheader.textContent = "Your Pizza Journey Starts Here";
+    } else {
+      heroImage.style.backgroundImage = "url('images/hero-1.jpg')";
+      heroHeader.textContent = "say yes to pizza";
+      heroSubheader.textContent = "The Party Can't Start Without Pizza.";
+    }
+    isImage1 = !isImage1; 
+  }
+
+  // Change background image and text content every 3 seconds
+  setInterval(changeContent, 3000);
+});
+ 
 // Smooth scrolling functionality
 const allLinks = document.querySelectorAll("a:link");
 allLinks.forEach(function(link) {
@@ -97,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //Animaions
-//For section header
+//For Section Header
 document.addEventListener('scroll', function() {
     const animatedElements = document.querySelectorAll('.div-header');
     const viewportHeight = window.innerHeight;
@@ -125,5 +149,17 @@ document.addEventListener('scroll', function () {
     }
   });
 });
-
-
+//Menu-item Animation
+document.addEventListener('scroll', function () {
+  const animatedMenu = document.querySelectorAll('.menu-item');
+  const viewportHeight = window.innerHeight;
+  
+  animatedMenu.forEach(animatedItem => {
+    const menuPosition = animatedItem.getBoundingClientRect().top;
+    if (menuPosition < viewportHeight) {
+      animatedItem.classList.add('img-animation');
+    } else {
+      animatedItem.classList.remove('img-animation');
+    }
+  });
+});
