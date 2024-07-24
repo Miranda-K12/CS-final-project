@@ -11,7 +11,6 @@
     font-display: swap;
 }
 
-
 @font-face {
     font-family: 'Cookie';
     src: url('../fonts/Cookie-Regular.eot');
@@ -24,14 +23,15 @@
     font-style: normal;
     font-display: swap;
 }
+
 @font-face {
-    font-family: 'Merienda';
-    src: url('../fonts/Merienda-Regular.eot');
-    src: url('../fonts/Merienda-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Merienda-Regular.woff2') format('woff2'),
-        url('../fonts/Merienda-Regular.woff') format('woff'),
-        url('../fonts/Merienda-Regular.ttf') format('truetype'),
-        url('../fonts/Merienda-Regular.svg#Merienda-Regular') format('svg');
+    font-family: 'Lora';
+    src: url('../fonts/Lora-Regular.eot');
+    src: url('../fonts/Lora-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Lora-Regular.woff2') format('woff2'),
+        url('../fonts/Lora-Regular.woff') format('woff'),
+        url('../fonts/Lora-Regular.ttf') format('truetype'),
+        url('../fonts/Lora-Regular.svg#Lora-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
