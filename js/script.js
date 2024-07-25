@@ -163,3 +163,29 @@ document.addEventListener('scroll', function () {
     }
   });
 });
+//Reservation form
+//Limit reservation date
+document.addEventListener("DOMContentLoaded", function () {
+  const reservationForm = document.querySelector(".reservation-form");
+  const reservationDate = document.getElementById("date");
+  document.getElementById("date").placeholder = "Select Date";
+    // Set reservation limit
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const year = tomorrow.getFullYear();
+    const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+    const day = String(tomorrow.getDate()).padStart(2, '0');
+  const minDate = `${year}-${month}-${day}`;
+  
+    reservationDate.setAttribute('min', minDate);
+    reservationForm.addEventListener("submit", function (event) {
+        const selectedDate = new Date(reservationDate.value);
+        selectedDate.setHours(17, 0, 0, 0);
+        tomorrow.setHours(20, 0, 0, 0);
+    });
+});
+//Limit reservation time
+document.getElementById("time").placeholder = "Select Time";
+
