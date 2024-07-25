@@ -227,6 +227,7 @@ html {
   border-radius: 1rem;
   display: block;
   transition: all 0.2s;
+  opacity: 0;
 }
 .gallery:hover .gallery-img:hover {
   transform: scale(1.2);
@@ -696,7 +697,6 @@ footer {
     transform: translate(0);
   }
 }
-
 @keyframes movetoBottom {
   0% {
     opacity: 0;
@@ -719,4 +719,3 @@ footer {
 75%{opacity:.75;}
 100%{opacity:1;}
 }
-

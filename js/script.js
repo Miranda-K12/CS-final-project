@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('scroll', function() {
     const animatedElements = document.querySelectorAll('.div-header');
     const viewportHeight = window.innerHeight;
-
     animatedElements.forEach(animatedEl => {
         const elPosition = animatedEl.getBoundingClientRect().top;
 
@@ -136,13 +135,29 @@ document.addEventListener('scroll', function() {
         }
     });
 });
+//for gallery images
+document.addEventListener('scroll', function() {
+    const animatedGallery = document.querySelectorAll('.gallery-img');
+    const viewport = window.innerHeight;
+
+    animatedGallery.forEach(animatedEl => {
+        const imagePosition = animatedEl.getBoundingClientRect().top;
+        if (imagePosition < viewport) {
+            animatedEl.classList.add('img-animation');
+        } else {
+            animatedEl.classList.remove('img-animation');
+        }
+    });
+});
+
+
 //Menu Gallery Animation
 document.addEventListener('scroll', function () {
   const animatedImages = document.querySelectorAll('.gallery__img');
-  const viewportHeight = window.innerHeight;
+  const vwHeight = window.innerHeight;
   animatedImages.forEach(animatedImg => {
     const imgPosition = animatedImg.getBoundingClientRect().top;
-    if (imgPosition < viewportHeight) {
+    if (imgPosition < vwHeight) {
       animatedImg.classList.add('img-animation');
     } else {
       animatedImg.classList.remove('img-animation');
@@ -152,11 +167,11 @@ document.addEventListener('scroll', function () {
 //Menu-item Animation
 document.addEventListener('scroll', function () {
   const animatedMenu = document.querySelectorAll('.menu-item');
-  const viewportHeight = window.innerHeight;
+  const viewportedHeight = window.innerHeight;
   
   animatedMenu.forEach(animatedItem => {
     const menuPosition = animatedItem.getBoundingClientRect().top;
-    if (menuPosition < viewportHeight) {
+    if (menuPosition < viewportedHeight) {
       animatedItem.classList.add('img-animation');
     } else {
       animatedItem.classList.remove('img-animation');
