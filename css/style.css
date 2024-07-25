@@ -164,7 +164,7 @@ html {
 }
 .check-menu,
 .booking {
-  background-color: var(--color-orange);
+  background-color: var(--color-dark-orange);
   color: var(--color-white);
   border-style: none;
   display: inline-block;
@@ -609,7 +609,7 @@ font-style: italic;
 .submit {
   background-color: var(--color-dark-orange);
   font-size: 2rem;
-  padding: 2.4rem 3.2rem;
+  padding: 2.4rem 4.2rem;
   color: var(--color-white);
   font-weight: 600;
   border-radius: 1rem;

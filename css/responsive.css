@@ -330,6 +330,9 @@
     flex-direction: column;
     margin-top: 3.6rem;
   }
+  .feature-header{
+    justify-content: center;
+  }
   .feature-icon {
     width: 2.4rem;
     height: 2.4rem;
@@ -340,6 +343,7 @@
   .feature-text {
     font-size: 1.6rem;
     line-height: 1.5;
+    text-align: center;
   }
   .footer-info {
     grid-template-columns: repeat(2, 1fr);
