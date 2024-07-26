@@ -394,11 +394,30 @@
                   <option>15+</option>
                </select>
             <input  type="text" onfocus="(this.type = 'date')" id="date" required>
-            <input type="text" onfocus="(this.type = 'time')"  id="time" required>
+            <select id="time"  name="time"  required>
+                 <option>Select Time</option>
+                  <option >04:00 PM</option>
+                  <option>05:00 PM</option>
+                  <option>06:00 PM</option>
+                  <option>07:00 PM</option>
+                  <option>08:00 PM</option>
+                  <option>09:00 PM</option>
+               </select>
         </div>
           <textarea class="text-area" name="message" rows="10" placeholder="Special Notes"></textarea>
           <div class="reserve-div">
             <button class="submit" type="submit">Reserve</button>
+            <div class="window hidden">
+              <div class="close-window">&times;</div>
+              <div class="window-text">
+        <h1 class="welcome-message">Welcome to <span class="restaurant-name">"LA DOCLE PIZZA"</span></h1>
+        <p class="order-confirmation">Thank you for choosing us! your order is recieved!</p>
+        <div class="special-discount">
+        <p>Enjoy <span class="sale">20</span>% discount on your reservation! </p>
+      </div>
+    </div>
+            </div>
+            <div class="overlay hidden"></div>
             <p class="form-text">"Please reserve your table at least 1 day in advance"</p>
           </div>
         </form>
