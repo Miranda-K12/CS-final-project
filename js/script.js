@@ -183,24 +183,77 @@ document.addEventListener('scroll', function () {
 document.addEventListener("DOMContentLoaded", function () {
   const reservationForm = document.querySelector(".reservation-form");
   const reservationDate = document.getElementById("date");
-  document.getElementById("date").placeholder = "Select Date";
-    // Set reservation limit
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
+  
+  // Placeholder text
+  reservationDate.placeholder = "Select Date";
+  
+  // Set reservation limit to at least one day in advance
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
 
-    const year = tomorrow.getFullYear();
-    const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
-    const day = String(tomorrow.getDate()).padStart(2, '0');
+  const year = tomorrow.getFullYear();
+  const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+  const day = String(tomorrow.getDate()).padStart(2, '0');
   const minDate = `${year}-${month}-${day}`;
   
-    reservationDate.setAttribute('min', minDate);
-    reservationForm.addEventListener("submit", function (event) {
-        const selectedDate = new Date(reservationDate.value);
-        selectedDate.setHours(17, 0, 0, 0);
-        tomorrow.setHours(20, 0, 0, 0);
-    });
-});
-//Limit reservation time
-document.getElementById("time").placeholder = "Select Time";
+  reservationDate.setAttribute('min', minDate);
 
+  reservationForm.addEventListener("submit", function (event) {
+    const selectedDate = new Date(reservationDate.value);
+    selectedDate.setHours(0, 0, 0, 0);
+    tomorrow.setHours(0, 0, 0, 0);
+
+    if (selectedDate < tomorrow) {
+      alert("Please select a date at least one day in advance.");
+      event.preventDefault(); // Prevent form submission
+    }
+  });
+});
+
+//Modal Window
+document.addEventListener('DOMContentLoaded', function () {
+  const showWindow = document.querySelector('.window');
+  const overlay = document.querySelector('.overlay');
+  const btnClose = document.querySelector('.close-window');
+  const btnSubmit = document.querySelector('.submit');
+  
+  const openWindow = function() {
+    showWindow.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+  };
+
+  const closeWindow = function() {
+    showWindow.classList.add('hidden');
+    overlay.classList.add('hidden');
+  };
+  
+  btnClose.addEventListener('click', closeWindow);
+  overlay.addEventListener('click', closeWindow);
+
+  const form = document.querySelector('form');
+  btnSubmit.addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+    if (validateBookingTime(form)) {
+      openWindow();
+    }
+  });
+  
+  // Time validation         
+  function validateBookingTime(form) {
+    const timeSelect = form.querySelector("#time").value;
+    const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
+
+    if (!validTimes.includes(timeSelect)) {
+      alert("Booking time must be between 04:00 PM and 09:00 PM.");
+      return false;
+    }
+    return true;
+  }
+  form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+    if (validateBookingTime(form)) {
+      openWindow();
+    }
+  });
+});
