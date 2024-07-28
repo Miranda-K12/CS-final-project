@@ -212,40 +212,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Modal Window
-document.addEventListener('DOMContentLoaded', function () {
-  const showWindow = document.querySelector('.window');
-  const overlay = document.querySelector('.overlay');
-  const btnClose = document.querySelector('.close-window');
-  const btnSubmit = document.querySelector('.submit');
-  
-  const openWindow = function() {
-    showWindow.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-  };
-
-  const closeWindow = function() {
-    showWindow.classList.add('hidden');
-    overlay.classList.add('hidden');
-  };
-  
-  btnClose.addEventListener('click', closeWindow);
-  overlay.addEventListener('click', closeWindow);
-
-  const form = document.querySelector('form');
-  btnSubmit.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
-    if (validateBookingTime(form)) {
-      openWindow();
-    }
-  });
-  
   // Time validation         
-  function validateBookingTime(form) {
+  /*function validateBookingTime(form) {
     const timeSelect = form.querySelector("#time").value;
     const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
 
     if (!validTimes.includes(timeSelect)) {
-      alert("Booking time must be between 04:00 PM and 09:00 PM.");
+      alert("Please, fill out all fields");
       return false;
     }
     return true;
@@ -257,3 +230,94 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+*/
+  //Validation
+  //Email validation 
+ function validateEmail(email) {
+  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+}
+//Booking time validation
+function validateBookingTime(form) {
+  const timeSelect = form.querySelector("#time").value;
+  const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
+  
+  if (!validTimes.includes(timeSelect)) {
+    alert("Please select a valid booking time.");
+    return false;
+  }
+  return true;
+}
+//Modal window
+function openModal() {
+  const showWindow = document.querySelector('.window');
+  const overlay = document.querySelector('.overlay');
+  showWindow.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+}
+function closeModal() {
+  const showWindow = document.querySelector('.window');
+  const overlay = document.querySelector('.overlay');
+  showWindow.classList.add('hidden');
+  overlay.classList.add('hidden');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.querySelector('form');
+  const btnSubmit = document.querySelector('.submit');
+  const btnClose = document.querySelector('.close-window');
+  const overlay = document.querySelector('.overlay');
+
+  btnSubmit.addEventListener('click', function (event) {
+  event.preventDefault(); // Prevent the form from submitting immediately
+    
+    let email = document.getElementById('email').value;
+    if (!validateEmail(email)) {
+      alert('Please enter a valid email.');
+      return;
+    }
+    if (validateBookingTime(form)) {
+      openModal();
+    }
+  });
+ /* 
+ let phone = document.getElementById('phone').value;
+    if (!validatePhoneNumber(phone)) {
+      alert('Please enter a valid phone number.');
+      return; // Stop execution if phone number is invalid
+    }
+ 
+ 
+ 
+ function validatePhoneNumber(phoneNumber) {
+  let phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  return phonePattern.test(phoneNumber);
+}
+*/
+  btnClose.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+});
+
+/*
+function validateName(name) {
+  // Step 1: Check if the name is not empty
+  if (!name.trim()) {
+    return false;
+  }
+
+  // Step 2: Check if the name contains only allowed characters
+  let namePattern = /^[A-Za-z][A-Za-z '-]*[A-Za-z]$/;
+  if (!namePattern.test(name)) {
+    return false;
+  }
+
+  // Step 3: Check the length of the name
+  if (name.length < 2 || name.length > 50) {
+    return false;
+  }
+
+  return true;
+}
+
+document.getElementById('myForm').reset();
+*/
