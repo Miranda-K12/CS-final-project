@@ -211,26 +211,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//Modal Window
-  // Time validation         
-  /*function validateBookingTime(form) {
-    const timeSelect = form.querySelector("#time").value;
-    const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
-
-    if (!validTimes.includes(timeSelect)) {
-      alert("Please, fill out all fields");
-      return false;
-    }
-    return true;
-  }
-  form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
-    if (validateBookingTime(form)) {
-      openWindow();
-    }
-  });
-});
-*/
   //Validation
   //Name Validation
 function validateFullName(userName) {
