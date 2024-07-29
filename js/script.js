@@ -232,92 +232,86 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 */
   //Validation
-  //Email validation 
- function validateEmail(email) {
-  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailPattern.test(email);
+  //Name Validation
+function validateFullName(userName) {
+  let namePattern = /^(?=.*[A-Za-z]{3})[A-Za-z][A-Za-z '-]*[A-Za-z]$/;
+  return namePattern.test(userName);
+  }
+// Email validation
+function validateEmail(email) {
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
 }
-//Booking time validation
-function validateBookingTime(form) {
-  const timeSelect = form.querySelector("#time").value;
-  const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
-  
-  if (!validTimes.includes(timeSelect)) {
-    alert("Please select a valid booking time.");
+// Mobile number validation
+function validatePhoneNumber(phoneNumber) {
+    let phonePattern = /^(?:\+?\(?([0-9]{1,4})\)?[-. ]?)?(?:[0-9]{1,4}[-. ]?){1,3}[0-9]{1,4}$/;
+    return phonePattern.test(phoneNumber);
+}
+//Number of Guest Validation
+function validateGuests(form) {
+  const guestSelect = form.querySelector('#guest').value;
+  const validGuestNumber = ["1", "2", "3", "4", "5", "6-10", "11-15", "15+"];
+  if (!validGuestNumber.includes(guestSelect)) {
+    alert('Please select a valid number of guests.');
     return false;
   }
   return true;
 }
-//Modal window
+// Booking time validation
+function validateBookingTime(form) {
+    const timeSelect = form.querySelector("#time").value;
+    const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
+    if (!validTimes.includes(timeSelect)) {
+        alert("Please select a valid booking time.");
+        return false;
+    }
+    return true;
+}
+// Modal window
 function openModal() {
-  const showWindow = document.querySelector('.window');
-  const overlay = document.querySelector('.overlay');
-  showWindow.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+    const showWindow = document.querySelector('.window');
+    const overlay = document.querySelector('.overlay');
+    showWindow.classList.remove('hidden');
+    overlay.classList.remove('hidden');
 }
 function closeModal() {
-  const showWindow = document.querySelector('.window');
-  const overlay = document.querySelector('.overlay');
-  showWindow.classList.add('hidden');
-  overlay.classList.add('hidden');
+    const showWindow = document.querySelector('.window');
+    const overlay = document.querySelector('.overlay');
+    showWindow.classList.add('hidden');
+    overlay.classList.add('hidden');
 }
-
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('form');
-  const btnSubmit = document.querySelector('.submit');
-  const btnClose = document.querySelector('.close-window');
-  const overlay = document.querySelector('.overlay');
+    const form = document.querySelector('form');
+    const btnSubmit = document.querySelector('.submit');
+    const btnClose = document.querySelector('.close-window');
+    const overlay = document.querySelector('.overlay');
+    btnSubmit.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the form from submitting immediately
+      let email = document.getElementById('email').value;
+      let phoneNumber = document.getElementById('phone').value;
+      let userName = document.getElementById('fname').value;
+      
+        if (!validateEmail(email)) {
+            alert('Please enter a valid email.');
+            return;
+        }
+        if (!validatePhoneNumber(phoneNumber)) {
+            alert('Please enter a valid phone number.');
+            return;
+      }
+      if (!validateGuests(form)) {
+            return;
+      }
+        if (!validateBookingTime(form)) {
+            return;
+      }
+      if (!validateFullName(userName)) {
+            alert('Please enter a valid full name.');
+            return;
+        }
+        openModal();
+    });
 
-  btnSubmit.addEventListener('click', function (event) {
-  event.preventDefault(); // Prevent the form from submitting immediately
-    
-    let email = document.getElementById('email').value;
-    if (!validateEmail(email)) {
-      alert('Please enter a valid email.');
-      return;
-    }
-    if (validateBookingTime(form)) {
-      openModal();
-    }
-  });
- /* 
- let phone = document.getElementById('phone').value;
-    if (!validatePhoneNumber(phone)) {
-      alert('Please enter a valid phone number.');
-      return; // Stop execution if phone number is invalid
-    }
- 
- 
- 
- function validatePhoneNumber(phoneNumber) {
-  let phonePattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  return phonePattern.test(phoneNumber);
-}
-*/
-  btnClose.addEventListener('click', closeModal);
-  overlay.addEventListener('click', closeModal);
+    btnClose.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
 });
-
-/*
-function validateName(name) {
-  // Step 1: Check if the name is not empty
-  if (!name.trim()) {
-    return false;
-  }
-
-  // Step 2: Check if the name contains only allowed characters
-  let namePattern = /^[A-Za-z][A-Za-z '-]*[A-Za-z]$/;
-  if (!namePattern.test(name)) {
-    return false;
-  }
-
-  // Step 3: Check the length of the name
-  if (name.length < 2 || name.length > 50) {
-    return false;
-  }
-
-  return true;
-}
-
-document.getElementById('myForm').reset();
-*/
