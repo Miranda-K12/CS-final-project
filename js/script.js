@@ -183,22 +183,18 @@ document.addEventListener('scroll', function () {
 document.addEventListener("DOMContentLoaded", function () {
   const reservationForm = document.querySelector(".reservation-form");
   const reservationDate = document.getElementById("date");
-  
   // Placeholder text
   reservationDate.placeholder = "Select Date";
-  
   // Set reservation limit to at least one day in advance
   const today = new Date();
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
-
   const year = tomorrow.getFullYear();
   const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
   const day = String(tomorrow.getDate()).padStart(2, '0');
   const minDate = `${year}-${month}-${day}`;
   
   reservationDate.setAttribute('min', minDate);
-
   reservationForm.addEventListener("submit", function (event) {
     const selectedDate = new Date(reservationDate.value);
     selectedDate.setHours(0, 0, 0, 0);
@@ -247,6 +243,24 @@ function validateBookingTime(form) {
     }
     return true;
 }
+//TextArea validation
+function validateText(form) {
+  const textarea = form.querySelector('.text-area');
+  const text = textarea.value.trim();
+  const minLength = 5;
+  const maxLength = 1000;
+  // Validate the length of the text
+  if (text.length < minLength) {
+    alert(`Please enter at least ${minLength} characters.`);
+    return false;
+  }
+  if (text.length > maxLength) {
+    alert(`Please enter no more than ${maxLength} characters.`);
+    return false;
+  }
+  // If validation passes
+  return true;
+}
 // Modal window
 function openModal() {
     const showWindow = document.querySelector('.window');
@@ -288,10 +302,15 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!validateFullName(userName)) {
             alert('Please enter a valid full name.');
             return;
-        }
+      }
+       if (!validateText(form)) {
+      return;
+    }
         openModal();
     });
 
     btnClose.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
 });
+
+  
