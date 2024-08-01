@@ -80,9 +80,6 @@
   .booking {
     padding: 2rem 4.8rem;
   }
-  .special-discount{
-    width:80%;
-  }
 }
 
 /* media 768*/
@@ -219,10 +216,6 @@
 .window-text{
   gap:1.6rem;
 }
-.special-discount{
-    width:90%;
-    font-size: 1.6rem;
-  }
  .welcome-message{
     font-size: 2.8rem;
   }
@@ -269,10 +262,6 @@
   }
   .form-text {
     width: 100%;
-    font-size: 1.4rem;
-  }
-  .special-offer{
-    text-align: center;
     font-size: 1.4rem;
   }
   .submit {
@@ -368,7 +357,7 @@
 .window-text{
   gap:1.2rem;
 }
-.special-discount, .order-confirmation{
+.order-confirmation{
     font-size: 1.2rem;
   }
  .welcome-message{
@@ -453,7 +442,7 @@
   .testimonail-text {
     width: 100%;
   }
-   .form-text,.special-offer {
+   .form-text {
    font-size:1.2rem;
   }
 }

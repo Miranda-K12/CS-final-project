@@ -606,13 +606,6 @@ option{
   font-weight: 700;
   font-style: italic;
 }
-.special-offer{
-font-size: 1.6rem;
-line-height: 1.5;
-text-align: left;
-font-weight: 700;
-font-style: italic;
-}
 .submit {
   background-color: var(--color-dark-orange);
   font-size: 2rem;
@@ -678,17 +671,6 @@ font-style: italic;
   color: var(--color-orange);
   font-style: italic;
   font-family: "Lora", serif;
-}
-.special-discount{
-  text-align: center;
-  background-color: #CC5500;
-  font-size: 1.8rem;
-  line-height: 1.5;
-  width:60%;
-  padding: 2.4rem;
-  border-radius: 1.2rem;
-  color: var(--color-white-pink);
-  text-transform: uppercase;
 }
 /*Footer*/
 footer {
