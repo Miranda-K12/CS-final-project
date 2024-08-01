@@ -580,6 +580,9 @@ input::placeholder,
   color: var(--color-dark-charcoal);
   background-color: var(--color-white);
 }
+.invalid-input{
+background-color: #ff0000;
+}
 .text-area{
   height:40vh;
 }
