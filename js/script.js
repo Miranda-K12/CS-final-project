@@ -217,8 +217,8 @@ function validateEmail(email) {
 }
 // Mobile number validation
 function validatePhoneNumber(phoneNumber) {
-    let phonePattern = /^(?:\+?\(?([0-9]{1,4})\)?[-. ]?)?(?:\(?([0-9]{2,4})\)?[-. ]?){0,2}[0-9]{6,}$/;
-    return phonePattern.test(phoneNumber);
+  let phonePattern = /^(?:\+?[1-9]\d{0,3})?[-.\s]?(?:\(?\d{1,4}\)?[-.\s]?)?(?:\d{1,4}[-.\s]?){1,3}\d{4,}$/;
+  return phonePattern.test(phoneNumber);
 }
 
 //Number of Guest Validation
