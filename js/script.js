@@ -150,7 +150,6 @@ document.addEventListener('scroll', function() {
     });
 });
 
-
 //Menu Gallery Animation
 document.addEventListener('scroll', function () {
   const animatedImages = document.querySelectorAll('.gallery__img');
@@ -199,14 +198,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedDate = new Date(reservationDate.value);
     selectedDate.setHours(0, 0, 0, 0);
     tomorrow.setHours(0, 0, 0, 0);
-
     if (selectedDate < tomorrow) {
       alert("Please select a date at least one day in advance.");
       event.preventDefault(); // Prevent form submission
     }
   });
 });
-
   //Validation
   //Name Validation
 function validateFullName(userName) {
@@ -220,9 +217,10 @@ function validateEmail(email) {
 }
 // Mobile number validation
 function validatePhoneNumber(phoneNumber) {
-    let phonePattern = /^(?:\+?\(?([0-9]{1,4})\)?[-. ]?)?(?:[0-9]{1,4}[-. ]?){1,3}[0-9]{1,4}$/;
+   let phonePattern = /^(?:\+?\(?([0-9]{1,4})\)?[-. ]?)?(?:\(?([0-9]{2,4})\)?[-. ]?){1,3}[0-9]{4}$/;
     return phonePattern.test(phoneNumber);
 }
+
 //Number of Guest Validation
 function validateGuests(form) {
   const guestSelect = form.querySelector('#guest').value;
@@ -304,7 +302,6 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       phoneInput.classList.remove('invalid-input');  // Reset background color if valid
     }
-
     if (!validateGuests(form)) {
       return;
     }
