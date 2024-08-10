@@ -325,4 +325,38 @@ document.addEventListener('DOMContentLoaded', function () {
   overlay.addEventListener('click', closeModal);
 });
 
-  
+//fetch
+  fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
+  method: 'GET',
+})
+  .then(function getData(data) {
+    if (!data.ok) {
+      throw 'Page Not Found';
+    }
+    return data.json();
+  })
+  .then(function (responseData) {
+    const divs = [
+      document.getElementById('div1'),
+      document.getElementById('div2'),
+      document.getElementById('div3'),
+      document.getElementById('div4')
+    ];
+
+    let index = 0;
+    responseData.categories.forEach((element) => {
+      if (["Miscellaneous", "Lamb", "Pasta", "Dessert"].includes(element.strCategory)) {
+        const img = document.createElement('img');
+        img.style.width = '200px';
+        img.style.height = '160px';
+        img.src = `${element.strCategoryThumb}`; 
+        // Append the img to divs
+        divs[index].appendChild(img);
+        // Move to the next div for the next image
+        index = (index + 1) % 4;
+      }
+    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });

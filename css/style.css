@@ -221,12 +221,6 @@ html {
           animation: movetoBottom 1s ease-out;
 }
 /*about */
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 
 .about {
   padding: 0 4.8rem;
@@ -345,12 +339,6 @@ html {
   line-height: 1.8;
 }
 /*menu*/
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 
 .menu {
   padding: 0 4.8rem;
@@ -586,6 +574,37 @@ html {
   gap: 2.4rem;
   margin: 0 auto;
   margin-top: 4.8rem;
+}
+/*special food */
+.special-food{
+  margin: 4.8rem 0;
+}
+.dish-wraper{
+display: -ms-grid;
+display: grid;
+-ms-grid-columns: 1fr 2.4rem 1fr 2.4rem 1fr 2.4rem 1fr;
+grid-template-columns: repeat(4, 1fr);
+gap:2.4rem;
+}
+.image-container{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 4px 4px 8px 4px;
+          box-shadow: rgba(99, 99, 99, 0.2) 4px 4px 8px 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 2rem;
+  padding: 2rem;
+  gap:2.4rem;
 }
 /*Testimonial*/
 .testimonial-section {
