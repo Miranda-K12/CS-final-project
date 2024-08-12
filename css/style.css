@@ -145,13 +145,6 @@ html {
   background-color: var(--color-orange);
 }
 /*hero-section*/
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .hero-section {
   background-image: url("../images/hero.jpg");
   background-position: center;
@@ -337,6 +330,9 @@ html {
 .feature-text {
   font-size: 1.8rem;
   line-height: 1.8;
+}
+.bottom-moving {
+  animation: movetoBottom 1s forwards;
 }
 /*menu*/
 

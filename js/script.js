@@ -149,6 +149,20 @@ document.addEventListener('scroll', function() {
         }
     });
 });
+//Feature Section Animation
+document.addEventListener('scroll', function() {
+    const animatedFeature = document.querySelectorAll('.features');
+    const vw = window.innerHeight;
+
+    animatedFeature.forEach(animatedEl => {
+        const imagePosition = animatedEl.getBoundingClientRect().top;
+        if (imagePosition < vw) {
+            animatedEl.classList.add('bottom-moving');
+        } else {
+            animatedEl.classList.remove('bottom-moving');
+        }
+    });
+});
 
 //Menu Gallery Animation
 document.addEventListener('scroll', function () {
@@ -177,6 +191,30 @@ document.addEventListener('scroll', function () {
     }
   });
 });
+
+
+//Special dishes Animation
+document.addEventListener('scroll', function () {
+  const animatedFood = document.querySelectorAll('.image-container');
+  const viewportedHeight = window.innerHeight;
+  
+  animatedFood.forEach(animatedItem => {
+    const menuPosition = animatedItem.getBoundingClientRect().top;
+    if (menuPosition < viewportedHeight) {
+      animatedItem.classList.add('img-animation');
+    } else {
+      animatedItem.classList.remove('img-animation');
+    }
+  });
+});
+
+
+
+
+
+
+
+
 //Reservation form
 //Limit reservation date
 document.addEventListener("DOMContentLoaded", function () {
