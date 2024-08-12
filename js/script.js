@@ -135,6 +135,21 @@ document.addEventListener('scroll', function() {
         }
     });
 });
+//About Section
+document.addEventListener('scroll', function() {
+    const animatedFeature = document.querySelectorAll('.about-text-box');
+    const viewbox = window.innerHeight;
+
+    animatedFeature.forEach(animatedEl => {
+        const textPosition = animatedEl.getBoundingClientRect().top;
+        if (textPosition < viewbox) {
+            animatedEl.classList.add('bottom-moving');
+        } else {
+            animatedEl.classList.remove('bottom-moving');
+        }
+    });
+});
+
 //for gallery images
 document.addEventListener('scroll', function() {
     const animatedGallery = document.querySelectorAll('.gallery-img');
@@ -155,8 +170,8 @@ document.addEventListener('scroll', function() {
     const vw = window.innerHeight;
 
     animatedFeature.forEach(animatedEl => {
-        const imagePosition = animatedEl.getBoundingClientRect().top;
-        if (imagePosition < vw) {
+        const featurePosition = animatedEl.getBoundingClientRect().top;
+        if (featurePosition < vw) {
             animatedEl.classList.add('bottom-moving');
         } else {
             animatedEl.classList.remove('bottom-moving');
@@ -192,28 +207,63 @@ document.addEventListener('scroll', function () {
   });
 });
 
-
 //Special dishes Animation
 document.addEventListener('scroll', function () {
   const animatedFood = document.querySelectorAll('.image-container');
   const viewportedHeight = window.innerHeight;
   
   animatedFood.forEach(animatedItem => {
-    const menuPosition = animatedItem.getBoundingClientRect().top;
-    if (menuPosition < viewportedHeight) {
+    const dishPosition = animatedItem.getBoundingClientRect().top;
+    if (dishPosition < viewportedHeight) {
       animatedItem.classList.add('img-animation');
     } else {
       animatedItem.classList.remove('img-animation');
     }
   });
 });
+//Form Animation
+document.addEventListener('scroll', function () {
+  const animatedForm = document.querySelectorAll('.reservation-form');
+  const viewTable = window.innerHeight;
+  
+  animatedForm.forEach(animatedItem => {
+    const tablePosition = animatedItem.getBoundingClientRect().top;
+    if (tablePosition < viewTable) {
+      animatedItem.classList.add('bottom-moving');
+    } else {
+      animatedItem.classList.remove('bottom-moving');
+    }
+  });
+});
+//Testimonail Section Animation
+//About Section
+document.addEventListener('scroll', function() {
+    const animatedCards = document.querySelectorAll('.cards');
+    const viewCards = window.innerHeight;
 
+    animatedCards.forEach(animatedEl => {
+        const cardPosition = animatedEl.getBoundingClientRect().top;
+        if (cardPosition < viewCards) {
+            animatedEl.classList.add('bottom-moving');
+        } else {
+            animatedEl.classList.remove('bottom-moving');
+        }
+    });
+});
 
-
-
-
-
-
+//footer animation
+document.addEventListener('scroll', function () {
+  const footerAnimation = document.querySelectorAll('.footer-column');
+  const vwFooter = window.innerHeight;
+  footerAnimation.forEach(animatedItem => {
+    const footerPosition = animatedItem.getBoundingClientRect().top;
+    if (footerPosition < vwFooter) {
+      animatedItem.classList.add('bottom-moving');
+    } else {
+      animatedItem.classList.remove('bottom-moving');
+    }
+  });
+});
 
 //Reservation form
 //Limit reservation date

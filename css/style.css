@@ -81,11 +81,12 @@ html {
   color: #ffffff;
   padding: 1.6rem 2.4rem;
   border-radius: 2rem;
-  background-color: var(--color-orange);
+  background-color: var(--color-dark-orange);
 }
 .book:hover {
   cursor: pointer;
   -webkit-transition: all 0.3s;
+  background-color: var(--color-orange);
   -o-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-transform: scale(1.1);
@@ -213,8 +214,19 @@ html {
   -webkit-animation: movetoBottom 1s ease-out;
           animation: movetoBottom 1s ease-out;
 }
+.check-menu:hover,
+.booking:hover,
+.submit:hover {
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  background-color: var(--color-orange);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
 /*about */
-
 .about {
   padding: 0 4.8rem;
 }
@@ -972,6 +984,9 @@ footer {
       -ms-transform: scale(1.2);
           transform: scale(1.2);
 }
+.footer-animation{
+  animation: slide-in 1s forwards;
+}
 /*Animations*/
 @-webkit-keyframes zooming {
   0% {
@@ -1079,3 +1094,4 @@ footer {
 75%{opacity:.75;}
 100%{opacity:1;}
 }
+
