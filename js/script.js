@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //fetch
-  fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
+fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
   method: 'GET',
 })
   .then(function getData(data) {
@@ -431,20 +431,49 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('div4')
     ];
 
+    //JS Filter
+    const filteredCategories = responseData.categories.filter(category =>
+      ["Miscellaneous", "Lamb", "Pasta", "Dessert"].includes(category.strCategory)
+    );
     let index = 0;
-    responseData.categories.forEach((element) => {
-      if (["Miscellaneous", "Lamb", "Pasta", "Dessert"].includes(element.strCategory)) {
-        const img = document.createElement('img');
-        img.style.width = '200px';
-        img.style.height = '160px';
-        img.src = `${element.strCategoryThumb}`; 
-        // Append the img to divs
-        divs[index].appendChild(img);
-        // Move to the next div for the next image
-        index = (index + 1) % 4;
-      }
+    filteredCategories.forEach(category => {
+      const img = document.createElement('img');
+      img.style.width = '200px';
+      img.style.height = '160px';
+      img.src = category.strCategoryThumb;
+      // Append the img to divs
+      divs[index].appendChild(img);
+      // Move to the next div for the next image
+      index = (index + 1) % 4;
     });
   })
-  .catch(function (error) {
-    alert('Something went wrong');
-  });
+.catch(function (error) {
+    const container = document.querySelector('.special-food');
+    const pError = document.createElement("p");
+    pError.style.fontSize = '24px';
+    pError.style.color = '#CC5500';
+    pError.style.textTransform = 'uppercase';
+    pError.style.fontWeight = '600';
+    pError.style.letterSpacing = '1.5px';
+
+    // Check if error.response and error.response.status exist
+    if (error.response?.status === 404) {
+        pError.textContent = "404, Not Found";
+    } else {
+        pError.textContent = "Something Went Wrong";
+    }
+
+    //add  error message to the container
+    container.appendChild(pError); 
+    // Delay message after 3 seconds
+    setTimeout(() => {
+        pError.classList.add('show');
+    }, 3000);
+
+    // Hide image containers
+    document.querySelectorAll('.image-container').forEach(container => {
+        container.style.display = 'none';
+    });
+});
+
+ 
