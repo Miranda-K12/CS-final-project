@@ -264,106 +264,72 @@ document.addEventListener('scroll', function () {
     }
   });
 });
-
-//Reservation form
-//Limit reservation date
+//Reservation Form Validation
+  // Name Validation
+ const validateFullName = (userName) => /^(?=.*[A-Za-z]{3})[A-Za-z][A-Za-z '-]*[A-Za-z]$/.test(userName);
+  // Email validation
+const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // Mobile number validation
+  const validatePhoneNumber = (phoneNumber) => /^(?:\+?[1-9]\d{0,3})?[-.\s]?(?:\(?\d{1,4}\)?[-.\s]?)?(?:\d{1,4}[-.\s]?){1,3}\d{4,}$/.test(phoneNumber);
+  // Number of Guests Validation
+  const validateGuests = (form) => {
+  const validGuestNumbers = ["1", "2", "3", "4", "5", "6-10", "11-15", "15+"];
+  const guestSelect = form.querySelector('#guest').value;
+  return validGuestNumbers.includes(guestSelect) || alert('Please select number of guests.');
+};
+// Booking time validation
+  const validateBookingTime = (form) => {
+  const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
+  const timeSelect = form.querySelector("#time").value;
+  return validTimes.includes(timeSelect) || alert("Please select booking time.");
+};
+//Set avaliable booking date
 document.addEventListener("DOMContentLoaded", function () {
-  const reservationForm = document.querySelector(".reservation-form");
   const reservationDate = document.getElementById("date");
-  // Placeholder text
-  reservationDate.placeholder = "Select Date";
-  // Set reservation limit to at least one day in advance
+  // Set minimum and maximum dates
   const today = new Date();
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
-  const year = tomorrow.getFullYear();
-  const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
-  const day = String(tomorrow.getDate()).padStart(2, '0');
-  const minDate = `${year}-${month}-${day}`;
-  
-  reservationDate.setAttribute('min', minDate);
-  reservationForm.addEventListener("submit", function (event) {
-    const selectedDate = new Date(reservationDate.value);
-    selectedDate.setHours(0, 0, 0, 0);
-    tomorrow.setHours(0, 0, 0, 0);
-    if (selectedDate < tomorrow) {
-      alert("Please select a date at least one day in advance.");
-      event.preventDefault(); // Prevent form submission
-    }
-  });
-});
-  //Validation
-  //Name Validation
-function validateFullName(userName) {
-  let namePattern = /^(?=.*[A-Za-z]{3})[A-Za-z][A-Za-z '-]*[A-Za-z]$/;
-  return namePattern.test(userName);
-  }
-// Email validation
-function validateEmail(email) {
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-}
-// Mobile number validation
-function validatePhoneNumber(phoneNumber) {
-  let phonePattern = /^(?:\+?[1-9]\d{0,3})?[-.\s]?(?:\(?\d{1,4}\)?[-.\s]?)?(?:\d{1,4}[-.\s]?){1,3}\d{4,}$/;
-  return phonePattern.test(phoneNumber);
-}
+  tomorrow.setHours(0, 0, 0, 0);
+  const maxDate = new Date(today);
+  maxDate.setDate(maxDate.getDate() + 90);
+  maxDate.setHours(0, 0, 0, 0);
 
-//Number of Guest Validation
-function validateGuests(form) {
-  const guestSelect = form.querySelector('#guest').value;
-  const validGuestNumber = ["1", "2", "3", "4", "5", "6-10", "11-15", "15+"];
-  if (!validGuestNumber.includes(guestSelect)) {
-    alert('Please select a valid number of guests.');
-    return false;
-  }
-  return true;
-}
-// Booking time validation
-function validateBookingTime(form) {
-    const timeSelect = form.querySelector("#time").value;
-    const validTimes = ["04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM", "09:00 PM"];
-    if (!validTimes.includes(timeSelect)) {
-        alert("Please select a valid booking time.");
-        return false;
-    }
-    return true;
-}
-//TextArea validation
-function validateText(form) {
-  const textarea = form.querySelector('.text-area');
-  const text = textarea.value.trim();
-  const minLength = 5;
-  const maxLength = 1000;
-  // Validate the length of the text
-  if (text.length < minLength) {
-    alert(`Please enter at least ${minLength} characters.`);
-    textarea.classList.add('invalid-input'); // Change background color
-    return false;
-  } else if (text.length > maxLength) {
-    alert(`Please enter no more than ${maxLength} characters.`);
-    textarea.classList.add('invalid-input'); // Change background color
-    return false;
-  }
-  
-  // If validation passes
-  textarea.classList.remove('invalid-input'); // Remove background color
-  return true;
-}
-// Modal window
-function openModal() {
+  const minYear = tomorrow.getFullYear();
+  const minMonth = String(tomorrow.getMonth() + 1).padStart(2, '0');
+  const minDay = String(tomorrow.getDate()).padStart(2, '0');
+  const minDate = `${minYear}-${minMonth}-${minDay}`;
+
+  const maxYear = maxDate.getFullYear();
+  const maxMonth = String(maxDate.getMonth() + 1).padStart(2, '0');
+  const maxDay = String(maxDate.getDate()).padStart(2, '0');
+  const maxDates = `${maxYear}-${maxMonth}-${maxDay}`;
+
+  reservationDate.setAttribute('min', minDate);
+  reservationDate.setAttribute('max', maxDates);
+  //Set Placeholder 
+ reservationDate.placeholder = 'Select Date';
+  // Validate date function
+const validateDate = () => reservationDate.value ? true : (alert('Please select a booking date.'), false);
+
+  // TextArea validation
+const validateText = (form) => form.querySelector('.text-area').value.trim().length >= 5 || alert('Please enter at least 5 characters.');
+  // Modal window
+  function openModal() {
     const showWindow = document.querySelector('.window');
     const overlay = document.querySelector('.overlay');
     showWindow.classList.remove('hidden');
     overlay.classList.remove('hidden');
-}
-function closeModal() {
+  }
+
+  function closeModal() {
     const showWindow = document.querySelector('.window');
     const overlay = document.querySelector('.overlay');
     showWindow.classList.add('hidden');
     overlay.classList.add('hidden');
-}
-document.addEventListener('DOMContentLoaded', function () {
+  }
+
+  // Form submission handling
   const form = document.querySelector('form');
   const btnSubmit = document.querySelector('.submit');
   const btnClose = document.querySelector('.close-window');
@@ -371,26 +337,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const emailInput = document.getElementById('email');
   const phoneInput = document.getElementById('phone');
   const userNameInput = document.getElementById('fname');
+
   btnSubmit.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent the form from submitting immediately
+
     let email = emailInput.value;
     let phoneNumber = phoneInput.value;
     let userName = userNameInput.value;
+
     if (!validateEmail(email)) {
       alert('Please enter a valid email.');
-      emailInput.classList.add('invalid-input'); //change background color
       return;
-    } else {
-      emailInput.classList.remove('invalid-input');  // Reset background color if valid
     }
     if (!validatePhoneNumber(phoneNumber)) {
       alert('Please enter a valid phone number.');
-      phoneInput.classList.add('invalid-input');
       return;
-    } else {
-      phoneInput.classList.remove('invalid-input');  // Reset background color if valid
     }
     if (!validateGuests(form)) {
+      return;
+    }
+    if (!validateDate()) {
       return;
     }
     if (!validateBookingTime(form)) {
@@ -398,20 +364,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (!validateFullName(userName)) {
       alert('Please enter a valid full name.');
-      userNameInput.classList.add('invalid-input'); //change background color
       return;
-    } else {
-      userNameInput.classList.remove('invalid-input');  // Reset background color if valid
-    };
-      if (!validateText(form)) {
+    } 
+
+    if (!validateText(form)) {
       return;
     }
-      openModal();
-      form.reset();
-    });
+
+    openModal();
+    form.reset();
+  });
+
   btnClose.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 });
+
 
 //fetch
 fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
@@ -476,4 +443,4 @@ fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
     });
 });
 
- 
+//example

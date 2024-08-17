@@ -806,9 +806,6 @@ input::placeholder,
   color: var(--color-dark-charcoal);
   background-color: var(--color-white);
 }
-.invalid-input{
-background-color: #ff0000;
-}
 .text-area{
   height:40vh;
 }
@@ -918,6 +915,7 @@ option{
   font-style: italic;
   font-family: "Lora", serif;
 }
+
 /*Footer*/
 footer {
   padding: 2.4rem;
