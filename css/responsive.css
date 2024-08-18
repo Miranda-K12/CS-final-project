@@ -317,9 +317,16 @@
   .first {
     display: none;
   }
+.cookie-content {
+  padding: 2rem;
 }
-/* media 520 */
-@media (max-width:32.5rem) {
+.cookie-content p{
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+}
+/* media 530 */
+@media (max-width:33.125rem) {
   .nav-bar {
     width: 100vw;
   }

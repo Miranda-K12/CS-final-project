@@ -985,6 +985,57 @@ footer {
 .footer-animation{
   animation: slide-in 1s forwards;
 }
+/*Cookies*/
+.cookie-content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:var(--color-orange);
+    padding: 2.4rem;
+    text-align: center;
+    z-index: 10;
+}
+.cookie-content p{
+  font-size: 1.6rem;
+  color:var(--color-black);
+  font-weight: 600;
+}
+.policy{
+ border-bottom: 2px solid var(--color-white);
+ font-weight: 600;
+}
+.policy:hover{
+cursor: pointer;
+color:var(--color-black);
+border-bottom: 2px solid var(--color-black);
+}
+.cookie-btns{
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+gap:3.6rem;
+font-size: 1.6rem;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+padding-top: 2rem;
+font-weight: 600;
+}
+.accept{
+background-color: var(--color-green);
+padding: 1rem 2rem;
+border-radius: 0.5rem;
+}
+.decline{
+border: 3px solid black;
+padding: 1rem 2rem;
+ border-radius: 0.5rem;
+}
+.accept:hover,
+.decline:hover{
+  cursor: pointer;
+}
 /*Animations*/
 @-webkit-keyframes zooming {
   0% {

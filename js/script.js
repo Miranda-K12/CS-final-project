@@ -307,11 +307,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   reservationDate.setAttribute('min', minDate);
   reservationDate.setAttribute('max', maxDates);
-  //Set Placeholder 
- reservationDate.placeholder = 'Select Date';
+  //set placeholder
+
   // Validate date function
 const validateDate = () => reservationDate.value ? true : (alert('Please select a booking date.'), false);
-
   // TextArea validation
 const validateText = (form) => form.querySelector('.text-area').value.trim().length >= 5 || alert('Please enter at least 5 characters.');
   // Modal window
@@ -321,14 +320,12 @@ const validateText = (form) => form.querySelector('.text-area').value.trim().len
     showWindow.classList.remove('hidden');
     overlay.classList.remove('hidden');
   }
-
   function closeModal() {
     const showWindow = document.querySelector('.window');
     const overlay = document.querySelector('.overlay');
     showWindow.classList.add('hidden');
     overlay.classList.add('hidden');
   }
-
   // Form submission handling
   const form = document.querySelector('form');
   const btnSubmit = document.querySelector('.submit');
@@ -366,11 +363,9 @@ const validateText = (form) => form.querySelector('.text-area').value.trim().len
       alert('Please enter a valid full name.');
       return;
     } 
-
     if (!validateText(form)) {
       return;
     }
-
     openModal();
     form.reset();
   });
@@ -443,4 +438,16 @@ fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
     });
 });
 
-//example
+//Cookies
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBox = document.getElementById('cookie-box');
+    const acceptBtn = document.querySelector('.accept');
+  const declineBtn = document.querySelector('.decline');
+  //Dissapear Cookies
+    acceptBtn.addEventListener('click', () => {
+        cookieBox.style.display = 'none';
+    });
+    declineBtn.addEventListener('click', () => {
+        cookieBox.style.display = 'none';
+    });
+});
