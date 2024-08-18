@@ -1030,7 +1030,7 @@ border-radius: 0.5rem;
 .decline{
 border: 3px solid black;
 padding: 1rem 2rem;
- border-radius: 0.5rem;
+border-radius: 0.5rem;
 }
 .accept:hover,
 .decline:hover{
