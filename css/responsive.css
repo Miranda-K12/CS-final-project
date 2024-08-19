@@ -318,15 +318,14 @@
     display: none;
   }
 .cookie-content {
-  padding: 2rem;
+  padding: 1rem;
 }
 .cookie-content p{
-  font-size: 1.4rem;
   line-height: 1.5;
 }
 .accept,
 .decline{
-  padding: 1rem 1.8rem;
+  padding: 1rem;
 }
 
 
@@ -516,16 +515,13 @@
    .form-text {
    font-size:1.2rem;
   }
-.cookie-content {
-  padding: 1.4rem;
-}
 .cookie-content p{
   font-size: 1.2rem;
   line-height: 1.5;
 }
 .accept,
 .decline{
-  padding: 0.8rem 1.6rem;
+  padding: 0.8rem;
   font-size: 1.2rem;
 }
 }
