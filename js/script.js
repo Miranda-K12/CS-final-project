@@ -1,16 +1,16 @@
 'use strict';
 //Burger Menu//
 const burgerBtn = document.querySelector(".btn-mobile-nav");
-const headerEl = document.querySelector(".header");
+const headerItem = document.querySelector(".header");
 burgerBtn.addEventListener("click", function() {
-  headerEl.classList.toggle("nav-open");
+  headerItem.classList.toggle("nav-open");
 });
 // Close button functionality
 const closeBtns = document.querySelectorAll("a:link");
 closeBtns.forEach(function(link) {
   link.addEventListener("click", function(e) {
     if (link.classList.contains("nav-a") || link.classList.contains("nav-book")) {
-      headerEl.classList.toggle("nav-open");
+      headerItem.classList.toggle("nav-open");
     }
   });
 });
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     isImage1 = !isImage1; 
   }
 
-  // Change background image and text content every 3 seconds
+  // Set time for content change
   setInterval(changeContent, 3000);
 });
  
@@ -314,30 +314,26 @@ const validateDate = () => reservationDate.value ? true : (alert('Please select 
   // TextArea validation
 const validateText = (form) => form.querySelector('.text-area').value.trim().length >= 5 || alert('Please enter at least 5 characters.');
   // Modal window
+const showWindow = document.querySelector('.window');
+const wraper = document.querySelector('.wraper');
   function openModal() {
-    const showWindow = document.querySelector('.window');
-    const overlay = document.querySelector('.overlay');
-    showWindow.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+  showWindow.classList.remove('hidden');
+   wraper.classList.remove('hidden');
   }
   function closeModal() {
-    const showWindow = document.querySelector('.window');
-    const overlay = document.querySelector('.overlay');
-    showWindow.classList.add('hidden');
-    overlay.classList.add('hidden');
+  showWindow.classList.add('hidden');
+  wraper.classList.add('hidden');
   }
   // Form submission handling
-  const form = document.querySelector('form');
+  const form = document.querySelector('.reservation-form');
   const btnSubmit = document.querySelector('.submit');
   const btnClose = document.querySelector('.close-window');
-  const overlay = document.querySelector('.overlay');
   const emailInput = document.getElementById('email');
   const phoneInput = document.getElementById('phone');
   const userNameInput = document.getElementById('fname');
 
   btnSubmit.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the form from submitting immediately
-
+    event.preventDefault(); 
     let email = emailInput.value;
     let phoneNumber = phoneInput.value;
     let userName = userNameInput.value;
@@ -371,7 +367,7 @@ const validateText = (form) => form.querySelector('.text-area').value.trim().len
   });
 
   btnClose.addEventListener('click', closeModal);
-  overlay.addEventListener('click', closeModal);
+  wraper.addEventListener('click', closeModal);
 });
 
 
@@ -410,26 +406,25 @@ fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
     });
   })
 .catch(function (error) {
-    const container = document.querySelector('.special-food');
-    const pError = document.createElement("p");
-    pError.style.fontSize = '24px';
-    pError.style.color = '#CC5500';
-    pError.style.textTransform = 'uppercase';
-    pError.style.fontWeight = '600';
-    pError.style.letterSpacing = '1.5px';
-
-    // Check if error.response and error.response.status exist
+  const container = document.querySelector('.special-food');
+  const errorP = document.createElement("p");
+  errorP.style.fontSize = '24px';
+  errorP.style.color = '#CC5500';
+  errorP.style.textTransform = 'uppercase';
+  errorP.style.fontWeight = '600';
+  errorP.style.letterSpacing = '1.5px';
+ // Check errors
     if (error.response?.status === 404) {
-        pError.textContent = "404, Not Found";
+        errorP.textContent = "404, Not Found";
     } else {
-        pError.textContent = "Something Went Wrong";
+        errorP.textContent = "Something Went Wrong";
     }
 
-    //add  error message to the container
-    container.appendChild(pError); 
-    // Delay message after 3 seconds
+    //display Error Message
+    container.appendChild(errorP); 
+    // Display message after 3 seconds
     setTimeout(() => {
-        pError.classList.add('show');
+        errorP.classList.add('show');
     }, 3000);
 
     // Hide image containers
@@ -437,17 +432,16 @@ fetch('https://www.themealdb.com/api/json/v1/1/categories.php', {
         container.style.display = 'none';
     });
 });
-
 //Cookies
 document.addEventListener('DOMContentLoaded', () => {
     const cookieBox = document.getElementById('cookie-box');
-    const acceptBtn = document.querySelector('.accept');
-  const declineBtn = document.querySelector('.decline');
+    const acceptButton = document.querySelector('.accept');
+  const declineButton = document.querySelector('.decline');
   //Dissapear Cookies
-    acceptBtn.addEventListener('click', () => {
+    acceptButton.addEventListener('click', () => {
         cookieBox.style.display = 'none';
     });
-    declineBtn.addEventListener('click', () => {
+   declineButton.addEventListener('click', () => {
         cookieBox.style.display = 'none';
     });
 });
