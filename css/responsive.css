@@ -327,11 +327,6 @@
 .decline{
   padding: 1rem;
 }
-
-
-
-
-
 }
 /* media 530 */
 @media (max-width:33.125rem) {
@@ -484,7 +479,6 @@
     margin-bottom: 2.4rem;
   }
 }
-
 /* media 375 */
 @media (max-width:23.43rem) {
   .hero-header {
