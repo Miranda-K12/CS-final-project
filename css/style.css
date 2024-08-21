@@ -992,8 +992,8 @@ footer {
     padding: 1.2rem;
     text-align: center;
     z-index: 10;
-    animation: cookies 0.5s forwards;
-    animation-delay: 2s;
+    animation: backInUp 0.5s forwards; /*using Npm*/
+    animation-delay: 2s; 
     opacity: 0;
 }
 .cookie-content p{
@@ -1142,17 +1142,4 @@ border-radius: 0.5rem;
 50% {opacity:.5;}
 75%{opacity:.75;}
 100%{opacity:1;}
-}
-
-@keyframes cookies {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(4rem);
-            transform: translateY(4rem);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translate(0);
-            transform: translate(0);
-  }
 }
