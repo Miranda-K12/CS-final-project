@@ -19,7 +19,7 @@ This project utilizes a variety of technologies and techniques to deliver a mode
 #### APIs and Libraries
 - **Fetch API**: Handles HTTP requests to interact with external data sources and APIs.
 - **[Animate.css](https://animate.style/)**: Provides a library of CSS animations to enhance user experience. Integrated via npm for easy usage in the project.
-##### What I learned
+#### What I learned
 This project was a great and valuable learning experience. Here’s a summary of the key JavaScript concepts and techniques I have improved working through this project:
 - **ES6+ Features:** Employed arrow functions, Used the Fetch API 
 - **DOM Manipulation:** Gained practical experience working with burger menu, modal window, slider and etc.
