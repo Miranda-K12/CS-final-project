@@ -41,6 +41,10 @@ html {
   top: 0;
   bottom: 0;
   background-color: var(--color-white);
+  transition: background-color 0.4s ease-out;
+}
+.changed{
+  background-color: var(--color-white-pink); 
 }
 .nav-bar {
   display: -webkit-box;

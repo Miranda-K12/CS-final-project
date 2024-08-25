@@ -20,3 +20,12 @@ export function scrolling() {
     });
   });
 }
+//Change header color
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  const changeBackground = function(){
+  window.scrollY > 400 ? header.classList.add('changed') : header.classList.remove('changed');
+  };
+
+  window.addEventListener('scroll', changeBackground);
+});
